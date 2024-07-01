@@ -125,18 +125,35 @@ export default function Form() {
 }
 
 function Field({ children, title }) {
+  const [isActive, setIsActive] = useState(true);
+  function handleButton() {
+    setIsActive(!isActive);
+  }
+
   return (
     <div className="form-field">
       <h2>{title}</h2>
-      <fieldset>{children}</fieldset>
+      <fieldset className={isActive ? "false" : "display-none"}>
+        {children}
+      </fieldset>
+      <Button onClick={handleButton} text={isActive ? "Submit" : "Edit"} />
     </div>
   );
 }
+
 function Input({ label, value, onChange }) {
   return (
     <>
       <label>{label}: </label>
       <input value={value} onChange={onChange}></input>
     </>
+  );
+}
+
+function Button({ text, onClick }) {
+  return (
+    <button type="button" onClick={onClick}>
+      {text}
+    </button>
   );
 }
