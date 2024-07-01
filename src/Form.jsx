@@ -37,6 +37,7 @@ export default function Form() {
             }
           />
           <Input
+            type="email"
             label="Email Address"
             value={genInfo.userEmail.value}
             onChange={(e) =>
@@ -47,6 +48,7 @@ export default function Form() {
             }
           />
           <Input
+            type="tel"
             label="Phone Number"
             value={genInfo.userPhoneNum.value}
             onChange={(e) =>
@@ -58,10 +60,7 @@ export default function Form() {
           />
         </Field>
 
-        <Field
-          title="Education Experience"
-          info={educationalInfo}
-        >
+        <Field title="Education Experience" info={educationalInfo}>
           <Input
             label="School Name"
             value={educationalInfo.schoolName.value}
@@ -83,6 +82,7 @@ export default function Form() {
             }
           />
           <Input
+            type="date"
             label="Date of Study"
             value={educationalInfo.studyDate.value}
             onChange={(e) =>
@@ -94,10 +94,7 @@ export default function Form() {
           />
         </Field>
 
-        <Field
-          title="Career Experience"
-          info={careerInfo}
-        >
+        <Field title="Career Experience" info={careerInfo}>
           <Input
             label="Company Name"
             value={careerInfo.companyName.value}
@@ -132,6 +129,7 @@ export default function Form() {
             }
           />
           <Input
+            type="date"
             label="Start Date"
             value={careerInfo.startDate.value}
             onChange={(e) =>
@@ -142,6 +140,7 @@ export default function Form() {
             }
           />
           <Input
+            type="date"
             label="End Date"
             value={careerInfo.endDate.value}
             onChange={(e) =>
@@ -174,12 +173,12 @@ function Field({ children, title, info }) {
   );
 }
 
-function Input({ label, value, onChange }) {
+function Input({ label, value, onChange, type }) {
   return (
-    <>
+    <div>
       <label>{label}: </label>
-      <input value={value} onChange={onChange}></input>
-    </>
+      <input type={type} value={value} onChange={onChange}></input>
+    </div>
   );
 }
 

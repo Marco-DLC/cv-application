@@ -63,6 +63,28 @@ button:focus-visible {
   display:none;
 }
 
+.cv-form {
+  background-color: white;
+  color:black;
+  display:flex;
+  flex-direction: column;
+  padding: 0 3em 3em;
+  border-radius: 5%;
+  border:#747bff .3em solid;
+}
+
+.form-field {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+fieldset {
+  display: flex;
+  justify-content: center;
+  gap:1em;
+  padding:1em;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
